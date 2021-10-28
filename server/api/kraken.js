@@ -6,10 +6,10 @@ router.use('/prices', async (req, res, next) => {
     const { data: kraken_BTC } = await axios.get(
       'https://api.kraken.com/0/public/Ticker?pair=BTCUSD'
     );
-    const { data: kraken_ETC } = await axios.get(
+    const { data: kraken_ETH } = await axios.get(
       'https://api.kraken.com/0/public/Ticker?pair=ETHUSD'
     );
-    res.json({ kraken_BTC, kraken_ETC });
+    res.json({ kraken_BTC, kraken_ETH });
   } catch (err) {
     next(err);
   }
